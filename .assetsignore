@@ -1,3 +1,8 @@
-wrangler.jsonc
+.git
+.gitattributes
 .gitignore
 .assetsignore
+.wrangler
+.DS_Store
+wrangler.jsonc
+node_modules
