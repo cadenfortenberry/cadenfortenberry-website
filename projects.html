@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Caden Fortenberry | Supply Chain Analytics</title>
+  <meta name="description" content="Supply chain analytics case study by Caden Fortenberry: redesigning a distribution network with a capacity, service-level and inventory-aware optimization model in Python.">
+  <link rel="canonical" href="https://cadenfortenberry.com/projects.html">
+  <meta name="author" content="Caden Fortenberry">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f172a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Caden Fortenberry">
+  <meta property="og:title" content="Projects | Caden Fortenberry | Supply Chain Analytics">
+  <meta property="og:description" content="Case study: redesigning a distribution network with an optimization model in Python.">
+  <meta property="og:url" content="https://cadenfortenberry.com/projects.html">
+  <meta property="og:image" content="https://cadenfortenberry.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Caden Fortenberry, Supply Chain Analytics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects | Caden Fortenberry | Supply Chain Analytics">
+  <meta name="twitter:description" content="Case study: redesigning a distribution network with an optimization model in Python.">
+  <meta name="twitter:image" content="https://cadenfortenberry.com/images/og-image.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23a5b4fc'%3ECF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://cadenfortenberry.com/projects.html#webpage",
+        "url": "https://cadenfortenberry.com/projects.html",
+        "name": "Projects | Caden Fortenberry | Supply Chain Analytics",
+        "isPartOf": { "@type": "WebSite", "url": "https://cadenfortenberry.com/", "name": "Caden Fortenberry" },
+        "about": { "@id": "https://cadenfortenberry.com/#person" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Distribution Network Redesign: A Public-Data Case Study",
+        "description": "A mixed-integer network optimization model in Python covering plants, distribution centers, capacities, service targets, inventory and handling costs, using public Census data and illustrative costs.",
+        "codeRepository": "https://github.com/cadenfortenberry/network-optimization-case-study",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@id": "https://cadenfortenberry.com/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://cadenfortenberry.com/#person",
+        "name": "Caden Fortenberry",
+        "url": "https://cadenfortenberry.com/",
+        "image": "https://cadenfortenberry.com/images/caden-fortenberry.jpg",
+        "jobTitle": "Supply Chain Analytics Manager",
+        "sameAs": [
+          "https://www.linkedin.com/in/caden-fortenberry"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Caden Fortenberry</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h1>Supply Chain Analytics Projects</h1>
+        <p>Hands-on case studies built with public data, so the full method and code can be shared openly.</p>
+      </div>
+    </div>
+
+    <section aria-labelledby="case-heading">
+      <div class="container">
+        <p class="eyebrow" style="color: var(--indigo-600);">Case study</p>
+        <h2 class="section-title" id="case-heading">Redesigning a Distribution Network</h2>
+        <p class="section-intro">A manufacturer with four plants and an eight-DC legacy network asks whether to keep it or redesign it. I built an optimization model to find the lowest-cost network that doesn't hurt customer service.</p>
+
+        <div class="stats">
+          <div class="stat"><span class="num">19%</span><span class="label">Lower modeled annual cost than the current network (about $19.9M)</span></div>
+          <div class="stat"><span class="num">8 to 6</span><span class="label">Distribution centers, with plant capacity utilization up from 67% to 83%</span></div>
+          <div class="stat"><span class="num">80% to 83%</span><span class="label">Demand within one-day delivery range: service improves while cost falls</span></div>
+        </div>
+        <p class="note">The company, plants, costs and volumes are fictional and illustrative. Customer locations and population come from public 2020 U.S. Census data.</p>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="case-block">
+          <h3 id="problem-heading">The problem</h3>
+          <p>Real network decisions are trade-offs. More distribution centers (DCs) shorten the last mile and speed up delivery, but add fixed cost, spread inventory thinner and complicate inbound freight from the plants. The question: what is the cheapest network that still serves customers at least as well as today?</p>
+
+          <h3>The approach</h3>
+          <ul>
+            <li><strong>Network:</strong> 4 plants supply DCs, which supply customers in the 59 largest continental U.S. cities, with capacity limits at every plant and DC.</li>
+            <li><strong>Decisions:</strong> which DC sites to open, at what size (small or large, with economies of scale), and how freight flows from plants to DCs to customers.</li>
+            <li><strong>Costs:</strong> inbound and outbound freight, DC fixed cost, handling, and inventory carrying cost that grows with the square root of throughput, which captures the safety stock benefit of consolidating sites.</li>
+            <li><strong>Service:</strong> a constraint on the share of demand within one-day delivery range (500 road miles).</li>
+            <li><strong>Scenarios:</strong> the current network, lowest cost, lowest cost with today's service held, and a 90% one-day service target.</li>
+          </ul>
+        </div>
+
+        <div class="figure-grid">
+          <figure>
+            <img src="images/network-map-baseline.webp" width="1100" height="682" alt="Map of the continental U.S. showing the current network of eight distribution centers, four plants and the customers each center serves" loading="lazy">
+            <figcaption>Current network: eight DCs, many small and some far from the plants that supply them.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/network-map-optimized.webp" width="1100" height="682" alt="Map of the continental U.S. showing the recommended network of six distribution centers, four plants and the customers each center serves" loading="lazy">
+            <figcaption>Recommended network: six DCs, with most placed next to plants to cut inbound freight.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="results-heading">
+      <div class="container">
+        <div class="case-block">
+          <h3 id="results-heading">What the model found</h3>
+        </div>
+
+        <div class="table-wrap">
+          <table class="scenarios">
+            <caption>Scenario comparison (illustrative annual cost)</caption>
+            <thead>
+              <tr><th scope="col">Scenario</th><th scope="col">DCs</th><th scope="col">Annual cost</th><th scope="col">vs. current</th><th scope="col">One-day coverage</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A. Current network</td><td>8</td><td>$104.7M</td><td>n/a</td><td>80.2%</td></tr>
+              <tr><td>B. Lowest cost, service may slip</td><td>5</td><td>$84.8M</td><td>-19%</td><td>78.0%</td></tr>
+              <tr class="highlight"><td>C. Lowest cost, service held (recommended)</td><td>6</td><td>$84.8M</td><td>-19%</td><td>82.6%</td></tr>
+              <tr><td>D. 90% one-day service</td><td>7</td><td>$88.4M</td><td>-16%</td><td>90.0%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="case-block">
+          <ul>
+            <li><strong>Where the saving comes from:</strong> fixed DC cost falls from $30.8M to $24.4M, inbound freight from $26.7M to $18.2M, outbound freight from $31.4M to $27.4M and inventory cost from $11.2M to $10.1M.</li>
+            <li><strong>Plant-attached DCs win:</strong> placing DCs in the same cities as plants removes inbound transfer freight for local volume, and the model chose this for most of the network.</li>
+            <li><strong>Holding service is nearly free:</strong> scenarios B and C cost the same to the nearest $0.1M, so there is no reason to let service slip. Raising one-day coverage to 90% costs about $3.6M more per year, and 95% about $5.8M more.</li>
+            <li><strong>The transition:</strong> close six sites (Columbus, Dallas, Denver, Philadelphia, Phoenix, Seattle), resize Atlanta, keep Los Angeles, and open four (New York, Fort Worth, Indianapolis, Sacramento).</li>
+            <li><strong>Robust to cost assumptions:</strong> with DC fixed costs from 25% lower to 50% higher, the saving stays near 19% and the best network is five or six DCs.</li>
+          </ul>
+        </div>
+
+        <div class="figure-grid two">
+          <figure>
+            <img src="images/network-cost-tradeoff.webp" width="1100" height="616" alt="Stacked bar chart of annual network cost by scenario, split into inbound freight, outbound freight, DC fixed cost, handling and inventory" loading="lazy">
+            <figcaption>Annual cost by scenario and cost component.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/network-service-coverage.webp" width="1100" height="611" alt="Line chart of annual network cost against the share of demand within one-day delivery range, showing the current network above the cost-efficient frontier" loading="lazy">
+            <figcaption>The current network sits well above the cost-efficient frontier.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="next-heading">
+      <div class="container">
+        <div class="case-block">
+          <h3 id="next-heading">Tools and next steps</h3>
+          <p><strong>Tools:</strong> Python (NumPy, pandas, SciPy mixed-integer solver) for the model and Matplotlib for the charts. The full code, data and results are open on GitHub.</p>
+          <p><strong>Limitations and next steps:</strong> cities stand in for metro areas, and one-time transition costs such as lease exits and build-out are not included. A production study would use order history by ZIP3, lane-level rates, single-sourcing rules and demand variability, and would calculate payback on the transition cost.</p>
+        </div>
+        <div class="btn-row" style="margin-top: 24px;">
+          <a class="btn btn-primary" href="https://github.com/cadenfortenberry/network-optimization-case-study" rel="noopener" target="_blank">View the code on GitHub</a>
+          <a class="btn btn-outline" href="contact.html">Discuss this project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p class="copyright">&copy; 2026 Caden Fortenberry. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.linkedin.com/in/caden-fortenberry" rel="me noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

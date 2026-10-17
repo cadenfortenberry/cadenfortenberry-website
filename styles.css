@@ -177,3 +177,41 @@ section { padding: 56px 0; }
 @media (min-width: 720px) {
   .contact-grid { grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
 }
+
+/* Projects page */
+.btn-outline { border-color: var(--slate-300); color: var(--slate-800); background: #fff; }
+.btn-outline:hover { border-color: var(--indigo-600); color: var(--indigo-600); }
+.case-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+.case-meta li { background: var(--slate-800); color: var(--slate-200); border: 1px solid var(--slate-700); border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; }
+
+.stats { display: grid; gap: 16px; margin: 0 0 8px; }
+.stat { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; padding: 22px; }
+.stat .num { display: block; font-size: 2rem; font-weight: 700; color: var(--indigo-600); line-height: 1.1; letter-spacing: -0.02em; }
+.stat .label { display: block; margin-top: 6px; color: var(--slate-600); font-size: 0.95rem; }
+
+.case-block { max-width: 70ch; }
+.case-block h3 { margin: 28px 0 8px; color: var(--slate-900); font-size: 1.2rem; }
+.case-block h3:first-child { margin-top: 0; }
+.case-block p, .case-block li { color: var(--slate-700); }
+.case-block ul { padding-left: 20px; margin: 0 0 16px; }
+.case-block li { margin-bottom: 6px; }
+
+figure { margin: 0; }
+figure img { width: 100%; border: 1px solid var(--slate-200); border-radius: 12px; background: #fff; }
+figcaption { color: var(--slate-600); font-size: 0.9rem; margin-top: 8px; }
+.figure-grid { display: grid; gap: 24px; margin: 24px 0; }
+.note { background: var(--slate-100); border-left: 4px solid var(--indigo-600); border-radius: 8px; padding: 14px 18px; color: var(--slate-700); font-size: 0.95rem; max-width: 70ch; }
+
+@media (min-width: 720px) {
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .figure-grid.two { grid-template-columns: 1fr 1fr; }
+}
+
+/* Scenario table */
+.table-wrap { overflow-x: auto; margin: 24px 0; border: 1px solid var(--slate-200); border-radius: 12px; background: #fff; }
+table.scenarios { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 560px; }
+table.scenarios caption { text-align: left; padding: 14px 16px 0; color: var(--slate-600); font-size: 0.9rem; }
+table.scenarios th, table.scenarios td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--slate-200); }
+table.scenarios th { color: var(--slate-900); font-weight: 600; background: var(--slate-50); }
+table.scenarios tr:last-child td { border-bottom: 0; }
+table.scenarios tr.highlight td { background: #eef2ff; font-weight: 600; color: var(--slate-900); }
