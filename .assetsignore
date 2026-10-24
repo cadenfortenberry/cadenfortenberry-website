@@ -6,3 +6,6 @@
 .DS_Store
 wrangler.jsonc
 node_modules
+.claude
+CLAUDE.md
+lab

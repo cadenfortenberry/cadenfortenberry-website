@@ -34,33 +34,45 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://cadenfortenberry.com/#person",
-    "name": "Caden Fortenberry",
-    "url": "https://cadenfortenberry.com/",
-    "image": "https://cadenfortenberry.com/images/caden-fortenberry.jpg",
-    "jobTitle": "Supply Chain Analytics Manager",
-    "description": "Supply chain analytics manager who turns supply chain data into measurable cost savings and better decisions across logistics analytics and network optimization.",
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Texas A&M University"
-    },
-    "knowsAbout": [
-      "Supply Chain Analytics",
-      "Network Optimization",
-      "Logistics Analytics",
-      "Inventory Optimization",
-      "Labor Management",
-      "Continuous Improvement",
-      "SQL",
-      "Python",
-      "Power BI",
-      "Tableau"
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/in/caden-fortenberry",
-      "https://github.com/cadenfortenberry",
-      "https://www.pinterest.com/cadenfortenberry/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cadenfortenberry.com/#website",
+        "url": "https://cadenfortenberry.com/",
+        "name": "Caden Fortenberry",
+        "alternateName": ["Caden Fortenberry Website", "cadenfortenberry.com"],
+        "publisher": { "@id": "https://cadenfortenberry.com/#person" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://cadenfortenberry.com/#person",
+        "name": "Caden Fortenberry",
+        "url": "https://cadenfortenberry.com/",
+        "image": "https://cadenfortenberry.com/images/caden-fortenberry.jpg",
+        "jobTitle": "Supply Chain Analytics Manager",
+        "description": "Supply chain analytics manager who turns supply chain data into measurable cost savings and better decisions across logistics analytics and network optimization.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Texas A&M University"
+        },
+        "knowsAbout": [
+          "Supply Chain Analytics",
+          "Network Optimization",
+          "Logistics Analytics",
+          "Inventory Optimization",
+          "Labor Management",
+          "Continuous Improvement",
+          "SQL",
+          "Python",
+          "Power BI",
+          "Tableau"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/caden-fortenberry",
+          "https://github.com/cadenfortenberry"
+        ]
+      }
     ]
   }
   </script>
@@ -123,6 +135,27 @@
             </div>
             <h3>Data &amp; BI Dashboarding</h3>
             <p>SQL-driven data models and clear dashboards that put the right numbers in front of operations and leadership.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="results-heading">
+      <div class="container">
+        <h2 class="section-title" id="results-heading">Selected results</h2>
+        <p class="section-intro">A few outcomes from my work in logistics and supply chain analytics.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Multi-million-dollar savings identified</h3>
+            <p>Found multi-million-dollar savings opportunities across a nationwide warehouse network through operational modeling.</p>
+          </article>
+          <article class="card">
+            <h3>99% data accuracy</h3>
+            <p>Rebuilt an incomplete reporting model from about 90% to 99% accuracy while migrating it to an enterprise data lake, earning the trust needed for a nationwide rollout.</p>
+          </article>
+          <article class="card">
+            <h3>Dashboards leaders actually use</h3>
+            <p>Designed six warehouse performance dashboards adopted by every regional vice president, and trained more than 200 operations leaders on them.</p>
           </article>
         </div>
       </div>

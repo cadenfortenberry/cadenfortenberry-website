@@ -39,7 +39,7 @@
         "@id": "https://cadenfortenberry.com/projects.html#webpage",
         "url": "https://cadenfortenberry.com/projects.html",
         "name": "Projects | Caden Fortenberry | Supply Chain Analytics",
-        "isPartOf": { "@type": "WebSite", "url": "https://cadenfortenberry.com/", "name": "Caden Fortenberry" },
+        "isPartOf": { "@id": "https://cadenfortenberry.com/#website" },
         "about": { "@id": "https://cadenfortenberry.com/#person" }
       },
       {
@@ -77,8 +77,7 @@
         ],
         "sameAs": [
           "https://www.linkedin.com/in/caden-fortenberry",
-          "https://github.com/cadenfortenberry",
-          "https://www.pinterest.com/cadenfortenberry/"
+          "https://github.com/cadenfortenberry"
         ]
       }
     ]
@@ -106,8 +105,8 @@
     <div class="page-hero">
       <div class="container">
         <p class="eyebrow">Projects</p>
-        <h1>Supply Chain Analytics Projects</h1>
-        <p>Hands-on case studies built with public data, so the full method and code can be shared openly.</p>
+        <h1>Caden Fortenberry's Supply Chain Analytics Projects</h1>
+        <p>Hands-on case studies by Caden Fortenberry, built with public data so the full method and code can be shared openly.</p>
       </div>
     </div>
 
@@ -119,7 +118,7 @@
 
         <div class="stats">
           <div class="stat"><span class="num">19%</span><span class="label">Lower modeled annual cost than the current network (about $19.9M)</span></div>
-          <div class="stat"><span class="num">8 to 6</span><span class="label">Distribution centers, with plant capacity utilization up from 67% to 83%</span></div>
+          <div class="stat"><span class="num">8 to 6</span><span class="label">Distribution centers, with DC capacity utilization up from 67% to 83%</span></div>
           <div class="stat"><span class="num">80% to 83%</span><span class="label">Demand within one-day delivery range: service improves while cost falls</span></div>
         </div>
         <p class="note">The company, plants, costs and volumes are fictional and illustrative. Customer locations and population come from public 2020 U.S. Census data.</p>
@@ -142,15 +141,47 @@
           </ul>
         </div>
 
-        <div class="figure-grid">
-          <figure>
-            <img src="images/network-map-baseline.webp" width="1100" height="682" alt="Map of the continental U.S. showing the current network of eight distribution centers, four plants and the customers each center serves" loading="lazy">
-            <figcaption>Current network: eight DCs, many small and some far from the plants that supply them.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/network-map-optimized.webp" width="1100" height="682" alt="Map of the continental U.S. showing the recommended network of six distribution centers, four plants and the customers each center serves" loading="lazy">
-            <figcaption>Recommended network: six DCs, with most placed next to plants to cut inbound freight.</figcaption>
-          </figure>
+        <div class="netmap" id="netmap" data-src="data/network-map.json">
+          <div class="netmap-app" hidden>
+            <div class="netmap-bar">
+              <div class="netmap-toggle" role="group" aria-label="Network scenario">
+                <button type="button" class="netmap-btn" data-scenario="baseline" aria-pressed="true">Baseline</button>
+                <button type="button" class="netmap-btn" data-scenario="optimized" aria-pressed="false">Optimized</button>
+              </div>
+              <dl class="netmap-kpis" aria-live="polite">
+                <div><dt>Annual cost</dt><dd data-kpi="cost"></dd></div>
+                <div><dt>Savings</dt><dd data-kpi="savings"></dd></div>
+                <div><dt>DCs</dt><dd data-kpi="dcs"></dd></div>
+                <div><dt>One-day service</dt><dd data-kpi="service"></dd></div>
+              </dl>
+            </div>
+            <figure class="netmap-figure">
+              <div class="netmap-stage" data-stage></div>
+              <ul class="netmap-legend" aria-hidden="true">
+                <li><svg viewBox="-13 -13 26 26" width="20" height="20"><path class="nm-plant-shape" d="M-11 8V-2L-5-6V-2L1-6V-2L7-6V-11H11V8Z"/></svg>Plant</li>
+                <li><svg viewBox="-13 -13 26 26" width="20" height="20"><circle class="nm-dot" r="9"/></svg>Open DC (larger = Large)</li>
+                <li><svg viewBox="-13 -13 26 26" width="20" height="20" class="is-closed"><circle class="nm-dot" r="9"/></svg>Closed DC</li>
+                <li><svg viewBox="-13 -13 26 26" width="20" height="20"><circle class="nm-cust-key" r="5"/></svg>Customer zone (size = demand)</li>
+                <li><svg viewBox="0 0 30 10" width="30" height="10"><path class="nm-flow nm-inbound" d="M1 5H29" stroke-width="3" fill="none"/></svg>Plant to DC</li>
+                <li><svg viewBox="0 0 30 10" width="30" height="10"><path class="nm-flow nm-outbound" d="M1 5H29" stroke-width="3" fill="none"/></svg>DC to customer (width = volume)</li>
+              </ul>
+              <figcaption data-caption="baseline">Current network: eight DCs, many small and some far from the plants that supply them.</figcaption>
+              <figcaption data-caption="optimized" hidden>Recommended network: six DCs, with most placed next to plants to cut inbound freight.</figcaption>
+            </figure>
+            <p class="netmap-sr" id="netmap-desc"></p>
+          </div>
+          <noscript>
+            <div class="figure-grid">
+              <figure>
+                <img src="images/network-map-baseline.webp" width="1100" height="682" alt="Map of the continental U.S. showing the current network of eight distribution centers, four plants and the customers each center serves" loading="lazy">
+                <figcaption>Current network: eight DCs, many small and some far from the plants that supply them.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/network-map-optimized.webp" width="1100" height="682" alt="Map of the continental U.S. showing the recommended network of six distribution centers, four plants and the customers each center serves" loading="lazy">
+                <figcaption>Recommended network: six DCs, with most placed next to plants to cut inbound freight.</figcaption>
+              </figure>
+            </div>
+          </noscript>
         </div>
       </div>
     </section>
@@ -227,5 +258,6 @@
       </ul>
     </div>
   </footer>
+  <script src="js/network-map.js" defer></script>
 </body>
 </html>
